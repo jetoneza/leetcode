@@ -4,14 +4,14 @@ pub struct Solution {}
 
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
-        let first = sort(s);
-        let second = sort(t);
+        let first = sort(&s);
+        let second = sort(&t);
 
         first == second
     }
 }
 
-fn sort(s: String) -> String {
+fn sort(s: &String) -> String {
     let mut word: Vec<char> = s.chars().collect();
 
     word.sort();
