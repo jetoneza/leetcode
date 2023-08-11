@@ -24,7 +24,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::solutions::contains_duplicate::Solution;
+    use crate::solutions::s001_contains_duplicate::Solution;
 
     #[test]
     fn it_works() {
