@@ -1,9 +1,11 @@
 #![allow(dead_code, unused_variables)]
 
+use std::collections::HashSet;
+
 pub struct Solution {}
 
 impl Solution {
-    pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
+    pub fn old_longest_consecutive(nums: Vec<i32>) -> i32 {
         if nums.len() == 0 {
             return 0;
         }
@@ -38,6 +40,34 @@ impl Solution {
 
         if longest < len {
             longest = len
+        }
+
+        longest
+    }
+
+    // O(n) solution
+    pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
+        let set: HashSet<i32> = nums.iter().cloned().collect();
+        let mut longest = 0;
+
+        for i in 0..nums.len() {
+            let num = nums[i];
+
+            if set.get(&(num - 1)) == None {
+                let mut len = 0;
+
+                loop {
+                    if set.get(&(num + len)) == None {
+                        break;
+                    }
+
+                    len += 1;
+                }
+
+                if longest < len {
+                    longest = len;
+                }
+            }
         }
 
         longest
