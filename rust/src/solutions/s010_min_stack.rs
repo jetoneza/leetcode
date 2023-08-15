@@ -22,18 +22,22 @@ impl MinStack {
         }
 
         match self.min.last() {
-            Some(min) if val <= min.to_owned() => self.min.push(val),
-            _ => {}
+            Some(min) => {
+                let to_push = if val <= min.to_owned() {
+                    val
+                } else {
+                    min.to_owned()
+                };
+
+                self.min.push(to_push)
+            }
+            None => {}
         };
     }
 
     fn pop(&mut self) {
-        match (self.arr.pop(), self.min.last()) {
-            (Some(popped), Some(min)) if popped == min.to_owned() => {
-                self.min.pop();
-            }
-            _ => {}
-        }
+        self.arr.pop();
+        self.min.pop();
     }
 
     fn top(&self) -> i32 {
