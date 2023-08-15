@@ -7,3 +7,4 @@ pub mod s006_product_of_array_except_self;
 pub mod s007_valid_sudoku;
 pub mod s008_longest_consecutive_sequence;
 pub mod s009_valid_parenthesis;
+pub mod s010_min_stack;
