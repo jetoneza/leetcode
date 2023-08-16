@@ -9,3 +9,4 @@ pub mod s008_longest_consecutive_sequence;
 pub mod s009_valid_parenthesis;
 pub mod s010_min_stack;
 pub mod s011_evaluate_reverse_polish_notation;
+pub mod s012_generate_parenthesis;
