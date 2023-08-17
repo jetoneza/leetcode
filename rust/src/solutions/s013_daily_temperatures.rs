@@ -32,7 +32,7 @@ impl Solution {
     }
 
     // O(n)
-    pub fn daily_temperatures(temperatures: Vec<i32>) -> Vec<i32> {
+    pub fn solution_2_daily_temperatures(temperatures: Vec<i32>) -> Vec<i32> {
         let mut ans: Vec<i32> = vec![0; temperatures.len()];
         let mut stack: Vec<(i32, usize)> = vec![];
 
@@ -47,6 +47,34 @@ impl Solution {
 
                 ans[index] = (i - index) as i32;
                 stack.pop();
+            }
+
+            stack.push((temp, i));
+        }
+
+        ans
+    }
+
+    // O(n)
+    pub fn daily_temperatures(temperatures: Vec<i32>) -> Vec<i32> {
+        let mut ans: Vec<i32> = vec![0; temperatures.len()];
+        let mut stack: Vec<(i32, usize)> = vec![];
+
+        for i in (0..temperatures.len()).rev() {
+            let temp = temperatures[i];
+
+            while let Some(last) = stack.last() {
+                if temp < last.0 {
+                    break;
+                }
+
+                stack.pop();
+            }
+
+            if let Some(last) = stack.last() {
+                if temp < last.0 {
+                    ans[i] = (last.1 - i) as i32;
+                }
             }
 
             stack.push((temp, i));
