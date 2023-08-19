@@ -15,3 +15,4 @@ pub mod s014_car_fleet;
 pub mod s015_largest_rectangle_in_histogram;
 pub mod s016_valid_palindrome;
 pub mod s017_two_sum_sorted;
+pub mod s018_3sum;
