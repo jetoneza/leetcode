@@ -23,3 +23,6 @@ pub mod s017_two_sum_sorted;
 pub mod s018_3sum;
 pub mod s019_container_with_most_water;
 pub mod s020_trapping_rain_water;
+
+// Binary search
+pub mod s021_binary_search;
