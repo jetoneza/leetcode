@@ -26,3 +26,6 @@ pub mod s020_trapping_rain_water;
 
 // Binary search
 pub mod s021_binary_search;
+
+// Sliding window
+pub mod s022_max_profit;
