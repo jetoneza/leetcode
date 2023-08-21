@@ -29,3 +29,6 @@ pub mod s021_binary_search;
 
 // Sliding window
 pub mod s022_max_profit;
+
+// Linked list
+pub mod s023_reverse_linked_list;
