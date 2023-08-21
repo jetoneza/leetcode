@@ -32,3 +32,4 @@ pub mod s022_max_profit;
 
 // Linked list
 pub mod s023_reverse_linked_list;
+pub mod s024_merged_two_sorted_lists;
