@@ -12,8 +12,24 @@
 
 import { ListNode } from "../types";
 
-function hasCycle(head: ListNode | null): boolean {
+function has_cycle(head: ListNode | null): boolean {
+  const visited = new Set();
+  let curr = head;
+
+  if (!curr) {
+    return false;
+  }
+
+  while (curr) {
+    if (visited.has(curr)) {
+      return true;
+    }
+
+    visited.add(curr);
+    curr = curr.next;
+  }
+
   return false;
 }
 
-export default hasCycle;
+export default has_cycle;
