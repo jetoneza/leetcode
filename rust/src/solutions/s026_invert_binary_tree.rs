@@ -91,7 +91,7 @@ fn insert_to_tree(
     root
 }
 
-fn compare(a: Option<Rc<RefCell<TreeNode>>>, b: Option<Rc<RefCell<TreeNode>>>) -> bool {
+fn compare(a: &Option<Rc<RefCell<TreeNode>>>, b: &Option<Rc<RefCell<TreeNode>>>) -> bool {
     match (a, b) {
         (None, None) => true,
         (Some(_), None) | (None, Some(_)) => false,
@@ -100,8 +100,8 @@ fn compare(a: Option<Rc<RefCell<TreeNode>>>, b: Option<Rc<RefCell<TreeNode>>>) -
                 return false;
             }
 
-            return compare(a.borrow().left.to_owned(), b.borrow().left.to_owned())
-                && compare(a.borrow().right.to_owned(), b.borrow().right.to_owned());
+            return compare(&a.borrow().left, &b.borrow().left)
+                && compare(&a.borrow().right, &b.borrow().right);
         }
     }
 }
@@ -117,9 +117,9 @@ mod tests {
         let input = vec![4, 2, 7, 1, 3, 6, 9];
         let reversed_input = vec![4, 7, 2, 9, 6, 3, 1];
 
-        let root = create_tree(input);
+        let root = Solution::invert_tree(create_tree(input));
         let reverse = create_tree(reversed_input);
 
-        assert_eq!(compare(Solution::invert_tree(root), reverse), true);
+        assert_eq!(compare(&root, &reverse), true);
     }
 }
