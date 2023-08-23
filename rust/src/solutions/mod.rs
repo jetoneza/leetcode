@@ -37,3 +37,4 @@ pub mod s024_merged_two_sorted_lists;
 // Trees
 pub mod s026_invert_binary_tree;
 pub mod s027_max_depth_of_binary_tree;
+pub mod s028_diameter_of_binary_tree;
