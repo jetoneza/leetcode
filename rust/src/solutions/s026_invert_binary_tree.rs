@@ -94,6 +94,7 @@ impl Tree {
         root
     }
 
+    // Used for test and is solution to s30_same_tree
     pub fn compare(a: &Option<Rc<RefCell<TreeNode>>>, b: &Option<Rc<RefCell<TreeNode>>>) -> bool {
         match (a, b) {
             (None, None) => true,

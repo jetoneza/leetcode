@@ -39,3 +39,4 @@ pub mod s026_invert_binary_tree;
 pub mod s027_max_depth_of_binary_tree;
 pub mod s028_diameter_of_binary_tree;
 pub mod s029_balanced_binary_tree;
+pub mod s30_same_tree;
