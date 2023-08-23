@@ -40,3 +40,4 @@ pub mod s027_max_depth_of_binary_tree;
 pub mod s028_diameter_of_binary_tree;
 pub mod s029_balanced_binary_tree;
 pub mod s030_same_tree;
+pub mod s031_subtree_of_another_tree;
