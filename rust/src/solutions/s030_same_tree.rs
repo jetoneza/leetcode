@@ -32,7 +32,7 @@ fn create_test_tree() -> Option<Rc<RefCell<TreeNode>>> {
 #[cfg(test)]
 mod tests {
     use crate::solutions::s026_invert_binary_tree::Tree;
-    use crate::solutions::s30_same_tree::{create_test_tree, Solution};
+    use crate::solutions::s030_same_tree::{create_test_tree, Solution};
 
     #[test]
     fn it_works() {
